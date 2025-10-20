@@ -41,7 +41,7 @@ def generar_csv_exponencial():
     print()
     
     # Configuración
-    a, b = -5.0, 0.0
+    a, b = -2.0, -1.0
     tolerancia = 1e-6
     max_iteraciones = 100
     
@@ -214,7 +214,8 @@ def crear_csv_exponencial_newton(historial, nombre_archivo):
                 fx = f"{fx_valor:.9f}"
             
             # Formatear f'(x)
-            fpx = f"{iteracion['f\'(x_anterior)']:.9f}"
+            f_derivada_key = "f'(x_anterior)"
+            fpx = f"{iteracion[f_derivada_key]:.9f}"
             
             # Formatear x_nuevo
             x_nuevo = f"{iteracion['x_actual']:.9f}"

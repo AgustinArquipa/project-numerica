@@ -65,8 +65,9 @@ def secante(
                 print(f"Advertencia: Denominador muy pequeño en iteración {i+1}")
             break
         
-        # Aplicar fórmula de la secante
-        x_siguiente = x_actual - fx_actual * (x_actual - x_anterior) / denominador
+        # Aplicar fórmula de la secante (según pseudocódigo)
+        # x_n+1 = (x_n-1 * f(x_n) - x_n * f(x_n-1)) / (f(x_n) - f(x_n-1))
+        x_siguiente = (x_anterior * fx_actual - x_actual * fx_anterior) / denominador
         fx_siguiente = f(x_siguiente)
         
         # Calcular error relativo si es posible
